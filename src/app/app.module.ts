@@ -12,6 +12,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {UploadModule} from './upload-module/upload.module';
 import {UiModule} from './ui-module/ui.module';
 import {GalleryModule} from './gallery-module/gallery.module';
+import {UploadDropModule} from './upload-drop-module/upload-drop.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {GalleryModule} from './gallery-module/gallery.module';
     AppRoutingModule,
     UiModule,
     UploadModule,
-    GalleryModule
+    GalleryModule,
+    UploadDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
