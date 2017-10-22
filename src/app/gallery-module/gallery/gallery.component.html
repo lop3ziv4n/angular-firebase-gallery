@@ -1,0 +1,14 @@
+<div class="col-lg-6">
+  <br>
+  <div>
+    <h1>{{title}}</h1>
+  </div>
+  <br>
+  <ul>
+    <li *ngFor="let image of images | async" class="col-xs-6 col-md-3">
+      <a [routerLink]="['/image', image.$key]" class="thumbnail">
+        <img src="{{image.url}}">
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<div class="col-lg-6">
+  <br>
+  <div>
+    <h1>{{title}}</h1>
+  </div>
+  <br>
+  <div *ngIf="currentUpload">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" [ngStyle]="{ 'width': currentUpload?.progress + '%' }">
+        <span class="badge">{{currentUpload?.progress}}%</span>
+      </div>
+    </div>
+    <span class="alert alert-success" role="alert"><strong>Success!</strong> File {{currentUpload?.name}} Upload</span>
+    <br>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Single File Upload</span>
+    <input type="file" class="form-control" (change)="detectFiles($event)">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-primary" [disabled]="!selectedFiles" (click)="uploadSingle()">
+        <span class="glyphicon glyphicon-cloud-upload"></span>
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Multiple File Upload</span>
+    <input type="file" class="form-control" (change)="detectFiles($event)" multiple>
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-primary" [disabled]="!selectedFiles" (click)="uploadMulti()">
+        <span class="glyphicon glyphicon-cloud-upload"></span>
+      </button>
+    </div>
+  </div>
+
+</div>

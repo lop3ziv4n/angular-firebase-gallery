@@ -1,0 +1,14 @@
+<div class="col-sm-offset-1 col-sm-14">
+  <app-upload></app-upload>
+
+  <div class="col-lg-6">
+    <br>
+    <div>
+      <h1>{{title}}</h1>
+    </div>
+    <br>
+    <div *ngFor="let upload of uploads | async">
+      <app-upload-detail [upload]='upload'></app-upload-detail>
+    </div>
+  </div>
+</div>

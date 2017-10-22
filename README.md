@@ -1,5 +1,11 @@
 # AngularFirebaseGallery
 
+https://github.com/angular/angularfire2/blob/master/docs/ionic/v3.md
+
+npm install angularfire2 firebase --save
+
+npm install bootstrap --save
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
 ## Development server

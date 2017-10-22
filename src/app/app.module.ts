@@ -1,16 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {environment} from '../environments/environment';
 
-import { AppComponent } from './app.component';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+
+import {AppComponent} from './app.component';
+
+import {AppRoutingModule} from './app-routing.module';
+import {UploadModule} from './upload-module/upload.module';
+import {UiModule} from './ui-module/ui.module';
+import {GalleryModule} from './gallery-module/gallery.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AppRoutingModule,
+    UiModule,
+    UploadModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
