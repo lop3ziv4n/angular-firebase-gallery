@@ -6,6 +6,8 @@ npm install angularfire2 firebase --save
 
 npm install bootstrap --save
 
+npm install jquery --save
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
 ## Development server

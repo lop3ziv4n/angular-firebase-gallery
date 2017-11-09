@@ -1,0 +1,10 @@
+<div *ngIf="isSelectedImages()">
+  <label class="col-sm-2 control-label">Selected Images:</label>
+  <ul class="nav nav-tabs">
+    <li *ngFor="let image of selectedImages" class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+        <img src="{{image.url}}" (click)="remove(image)" class="img-responsive">
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+<div class="col-lg-12">
+  <br>
+  <div>
+    <h1>{{title}}</h1>
+  </div>
+  <br>
+  <h2>Drop File</h2>
+  <div class="upload-drop-zone"
+       appFileDrop
+       [ngClass]="{'drop': dropZoneActive}"
+       (filesHovered)="dropZoneState($event)"
+       [images]="images">
+    <i class="glyphicon glyphicon-cloud-upload"></i>
+    Just drag and drop files here
+  </div>
+  <h2>Select File</h2>
+  <div class="input-group">
+    <span class="input-group-addon">File Upload</span>
+    <input type="file" class="form-control" (change)="detectFiles($event)" multiple>
+  </div>
+  <h3>Upload Files</h3>
+  <button type="button" class="btn btn-success" (click)="upload()" [disabled]="images?.length == 0 || !enabledUpload">
+    <span class="glyphicon glyphicon-upload"></span> Upload files
+  </button>
+  <button type="button" class="btn btn-danger" (click)="clear()">
+    <span class="glyphicon glyphicon-trash"></span> Clear files
+  </button>
+  <table class="table" *ngIf="images.length > 0">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Progress</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let image of images">
+      <td nowrap><strong>{{ image?.file?.name }}</strong></td>
+      <td nowrap>{{image?.file?.size / 1024 / 1024 | number:'.2' }} MB</td>
+      <td>
+        <div class="progress" style="margin-bottom: 0;">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': image?.progress + '%' }"></div>
+        </div>
+      </td>
+      <td nowrap *ngIf="image?.progress === 100">
+        <button type="button" class="btn btn-danger btn-xs" (click)="selected(image)">Select</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <app-selected-image [selectedImages]="selectedImages"></app-selected-image>
+</div>

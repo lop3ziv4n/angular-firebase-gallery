@@ -13,6 +13,7 @@ import {UploadModule} from './upload-module/upload.module';
 import {UiModule} from './ui-module/ui.module';
 import {GalleryModule} from './gallery-module/gallery.module';
 import {UploadDropModule} from './upload-drop-module/upload-drop.module';
+import {ImageModule} from './image-module/image.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {UploadDropModule} from './upload-drop-module/upload-drop.module';
     UiModule,
     UploadModule,
     GalleryModule,
-    UploadDropModule
+    UploadDropModule,
+    ImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
