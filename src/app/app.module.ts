@@ -14,6 +14,7 @@ import {UiModule} from './ui-module/ui.module';
 import {GalleryModule} from './gallery-module/gallery.module';
 import {UploadDropModule} from './upload-drop-module/upload-drop.module';
 import {ImageModule} from './image-module/image.module';
+import {CarouselModule} from './carousel-module/carousel.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ImageModule} from './image-module/image.module';
     UploadModule,
     GalleryModule,
     UploadDropModule,
-    ImageModule
+    ImageModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

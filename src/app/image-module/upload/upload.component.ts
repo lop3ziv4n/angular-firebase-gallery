@@ -26,6 +26,7 @@ export class UploadComponent implements OnInit {
   detectFiles($event) {
     _.each($event.target.files, (file) => {
       this.images.push(new Image(file));
+      this.enabledUpload = true;
     });
   }
 
@@ -45,9 +46,16 @@ export class UploadComponent implements OnInit {
     }
     const filesIndex = _.range(files.length);
     _.each(filesIndex, (idx) => {
-      this.imageService.pushImage(files[idx]);
+      const image = files[idx];
+      if (this.imageWasAdded(image)) {
+        this.imageService.pushImage(image);
+      }
     });
     this.enabledUpload = false;
+  }
+
+  private imageWasAdded(image: Image): boolean {
+    return _.isEmpty(image.url);
   }
 
   selected(image: Image) {

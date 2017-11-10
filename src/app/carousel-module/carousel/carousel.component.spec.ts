@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectedPreviewComponent } from './selected-preview.component';
+import { CarouselComponent } from './carousel.component';
 
-describe('SelectedPreviewComponent', () => {
-  let component: SelectedPreviewComponent;
-  let fixture: ComponentFixture<SelectedPreviewComponent>;
+describe('CarouselComponent', () => {
+  let component: CarouselComponent;
+  let fixture: ComponentFixture<CarouselComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectedPreviewComponent ]
+      declarations: [ CarouselComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectedPreviewComponent);
+    fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
