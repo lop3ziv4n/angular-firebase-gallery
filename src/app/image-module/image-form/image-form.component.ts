@@ -11,6 +11,8 @@ import * as _ from 'lodash';
 export class ImageFormComponent implements OnInit {
 
   selectedImages: Image[] = [];
+  imageUrl = '';
+  imageName = '';
   nextPhotoInterval = 5000;
   noLoopSlides = true;
   urls: string[] = [
@@ -25,10 +27,6 @@ export class ImageFormComponent implements OnInit {
     this.initImages();
   }
 
-  isImageActive(): boolean {
-    return true;
-  }
-
   private initImages() {
     _.each(this.urls, (url) => {
       this.getImageUrl(url);
@@ -40,5 +38,10 @@ export class ImageFormComponent implements OnInit {
       .then(image => {
         this.selectedImages.push(image);
       });
+  }
+
+  selectImage(image: Image) {
+    this.imageUrl = image.url;
+    this.imageName = image.name;
   }
 }

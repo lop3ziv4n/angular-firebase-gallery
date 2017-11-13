@@ -25,13 +25,35 @@
         <div class="col-sm-12">
           <app-carousel [interval]="nextPhotoInterval" [noWrap]="noLoopSlides">
             <app-slide *ngFor="let image of selectedImages; let i = index">
-              <img [src]="image.url" class="img-responsive" style="margin:auto;">
+              <img [src]="image.url" class="img-responsive" style="margin:auto;" data-toggle="modal"
+                   data-target="#imageModal" (click)="selectImage(image)">
               <div class="carousel-caption">
                 <br>
                 <p style="background-color: transparent;color: white;">{{image.name}}</p>
               </div>
             </app-slide>
           </app-carousel>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div id="imageModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <br>
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="panel panel-default">
+              <div class="panel-heading"><h4>{{imageName}}</h4></div>
+              <img class="panel-body" [src]="imageUrl">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>

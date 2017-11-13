@@ -1,0 +1,18 @@
+/* Style the Image */
+img {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+
+/* Panel Body (Image) */
+.panel-body {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}

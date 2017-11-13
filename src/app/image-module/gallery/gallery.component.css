@@ -1,9 +1,25 @@
-.hide-bullets {
-  list-style: none;
-  margin-left: -10px;
-  margin-top: 10px;
+.gallery {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
 }
 
-.thumbnail {
-  padding: 0;
+.gallery img {
+  width: 100%;
+  padding: 7px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+  }
 }

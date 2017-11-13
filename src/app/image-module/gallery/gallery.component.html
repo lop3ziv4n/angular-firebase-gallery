@@ -7,11 +7,9 @@
     <app-selected-image [selectedImages]="selectedImages"></app-selected-image>
   </div>
   <br>
-  <ul class="nav nav-tabs hide-bullets">
-    <li *ngFor="let image of imageGallery | async" class="col-xs-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{{image.url}}" (click)="selected(image)" class="img-responsive">
-      </div>
+  <ul class="gallery">
+    <li *ngFor="let image of imageGallery | async">
+        <img src="{{image.url}}" (click)="selected(image)">
     </li>
   </ul>
 </div>
